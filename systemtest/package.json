@@ -9,7 +9,8 @@
   },
   "scripts": {
     "cypress": "cypress open",
-    "test": " cypress run"
+    "test": "cypress run --env url=test",
+    "testdev": " cypress run --env url=dev"
   },
   "author": "",
   "license": "ISC"

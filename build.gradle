@@ -75,3 +75,45 @@ test {
     // Use junit platform for unit tests
     useJUnitPlatform()
 }
+
+task buildDockerImage(type: Exec) { 
+    group 'docker'
+    description 'build docker image'
+    commandLine 'docker', 'build', '-t', 'steinko/junit5tutorial:1', '.'
+   }
+
+task runDockerImage(type: Exec) { 
+    dependsOn buildDockerImage
+    group 'docker'
+    description 'run docker image'
+    commandLine 'docker', 'run', '-p', '8080:8080','steinko/junitmockito:1'
+   }
+
+
+task createGCP(type:Exec) {
+  dependsOn 'buildDockerImage'
+	group 'Deployment'
+	description 'create google cloud project'
+	commandLine 'ansible-playbook', '../../Infrastructure/Deployment/CreateProject.yaml'
+ }
+
+ task deletGCP (type:Exec) {
+   group 'Deployment'
+	description 'create google cloud project'
+	commandLine 'ansible-playbook', '../../Infrastructure/Deployment/DeleteProject.yaml'
+}
+
+task deleteService(type:Exec){ 
+  group 'Deployment'
+	description 'delete appengine service'
+  commandLine 'gcloud','app', 'services', 'delete', 'default'
+
+ }
+
+task deployService(type: Exec) { 
+  group 'Deployment'
+	description 'deploy service on appengine'
+  commandLine 'gcloud', 'app', 'deploy'
+
+ }
+
