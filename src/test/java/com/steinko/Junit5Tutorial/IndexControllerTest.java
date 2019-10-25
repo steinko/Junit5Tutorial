@@ -54,5 +54,11 @@ public class IndexControllerTest {
 		
 	}
 	
+	@Test 
+	public void shoulOpsHandler() { 
+		assertEquals("not implemented",controller.oupsHandler(),()-> "returned handler");
+		
+	}
+	
 	
 }

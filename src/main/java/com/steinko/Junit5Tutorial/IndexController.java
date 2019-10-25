@@ -12,4 +12,9 @@ public class IndexController {
 		return "index";
 	}
 
+	public String oupsHandler() {
+		// TODO Auto-generated method stub
+		return "not implemented";
+	}
+
 }
