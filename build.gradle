@@ -14,34 +14,29 @@ plugins {
     id 'java'
     id "ajk.gradle.elastic" version "0.0.20"
     // Apply the application plugin to add support for building a CLI application
-    id 'application'
+    
+  
 }
 
 repositories {
     mavenCentral()
 }
 
+def cucumberVersion = '1.2.5'
 dependencies {
-    // This dependency is used by the application.
-    implementation 'com.google.guava:guava:28.0-jre'
-
-    // Use JUnit Jupiter API for testing.
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
-
-    // Use JUnit Jupiter Engine for testing.
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
-
+    
     implementation 'org.springframework.boot:spring-boot-starter-web:2.2.0.RELEASE'
 
-    testImplementation('org.springframework.boot:spring-boot-starter-test:2.2.0.RELEASE') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+    testImplementation('org.springframework.boot:spring-boot-starter-test:2.2.0.RELEASE') 
+    {
+		    exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	  }
+
+   
+    
 }
 
-application {
-    // Define the main class for the application
-    mainClassName = 'Junit5Tutorial.App'
-}
+
 
 test {
     // Use junit platform for unit tests

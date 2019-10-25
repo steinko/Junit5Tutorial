@@ -1,0 +1,16 @@
+{
+  "name": "systemtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^3.5.0"
+  },
+  "scripts": {
+    "cypress": "cypress open",
+    "test": " cypress run"
+  },
+  "author": "",
+  "license": "ISC"
+}
