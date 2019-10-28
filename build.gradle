@@ -106,7 +106,7 @@ task createGCP(type:Exec) {
 task deleteService(type:Exec){ 
   group 'Deployment'
 	description 'delete appengine service'
-  commandLine 'gcloud','app', 'services', 'delete', 'default'
+  commandLine 'gcloud app services delete default'
 
  }
 

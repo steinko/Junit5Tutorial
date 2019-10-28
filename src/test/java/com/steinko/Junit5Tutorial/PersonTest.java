@@ -12,8 +12,8 @@ public class PersonTest {
 		Person person = new Person(1L,"Stein", "Korsveien");
 		assertAll("should deliver correct person information",
 			()->assertEquals(person.id(),1L),
-			()->assertEquals(person.firtsName(),"Stein"),
-			()->assertEquals(person.familiName(),"Korsveien")
+			()->assertEquals(person.getFirstName(),"Stein"),
+			()->assertEquals(person.getFamilyName(),"Korsveien")
 		);
 		
 	}
