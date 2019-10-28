@@ -1,8 +1,8 @@
 package com.steinko.Junit5Tutorial;
 
 public class Owner extends Person{
-	  String city;
-	  int telephone;
+	  private String city;
+	  private int telephone;
 
 	public Owner(long id, String fistName, String familyName) {
 		super(id, fistName, familyName);

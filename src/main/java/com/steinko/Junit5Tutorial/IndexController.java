@@ -14,7 +14,7 @@ public class IndexController {
 
 	public String oupsHandler() {
 		// TODO Auto-generated method stub
-		return "not implemented";
+		 throw  new HandelExeption();
 	}
 
 }
