@@ -2,4 +2,7 @@ language: java
 jdk: openjdk12
 os: linux
 dist: trusty
-script: ./gradlew test
+script: 
+  - ./gradlew check
+  - ./gradlew sonarqube
+  - ./gradlew buildDockerImage
