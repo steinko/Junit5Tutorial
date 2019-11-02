@@ -11,8 +11,12 @@ public class SpecialitySDJpaService {
 	}
 
 	public void delet(Speciality speciality) {
+		repository.delete(speciality);
+	}
+
+	public Speciality findById(long id) {
 		// TODO Auto-generated method stub
-		
+		return repository.findById(id);
 	}
 
 }

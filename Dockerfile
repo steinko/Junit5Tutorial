@@ -1,4 +1,4 @@
-FROM openjdk:12
+FROM openjdk:11
 COPY build/libs/Junit5Tutorial.jar ./
 ENTRYPOINT ["java"]
 CMD ["-jar", "/Junit5Tutorial.jar"]

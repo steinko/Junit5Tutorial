@@ -7,4 +7,13 @@ public class SpecialityRepoitory {
 		
 	}
 
+	public Speciality findById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public void delete(Speciality speciality) { 
+		
+	}
+
 }
