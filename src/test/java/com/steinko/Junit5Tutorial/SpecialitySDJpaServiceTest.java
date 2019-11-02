@@ -10,6 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.any;
+import static org.mockito.BDDMockito.*;
 
 
 
@@ -26,16 +27,21 @@ public class SpecialitySDJpaServiceTest {
 	
 	@Test
 	void shouldreturnSpecalityObject() {
+		//Given
 		Speciality speciality = new Speciality();
-		when(service.findById(1L)).thenReturn(speciality);
+		given(service.findById(1L)).willReturn(speciality);
+		//When
         Speciality found = service.findById(1L);
+        //Then
         assertEquals(speciality,found);
-	}
+        then(repository).should().findById(anyLong());
+        then(repository).shouldHaveNoMoreInteractions();
+	} 	
 	
 	@Test
 	void shouldDeleteById() {
 		service.deletedById(1L);
-		verify(repository).deletedById(1L);
+		then(repository).should().deletedById(1L);
 		
 	}
 	
@@ -44,8 +50,10 @@ public class SpecialitySDJpaServiceTest {
 	@Test
 	void shouldDelet() {
 		service.delet(new Speciality());
-		verify(repository).delete(any(Speciality.class));
+		then(repository).should().delete(any(Speciality.class));
 		
 	}
+	
+	
 
 }
