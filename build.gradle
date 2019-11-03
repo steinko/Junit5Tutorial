@@ -47,7 +47,6 @@ appengine {
   stage {
       appEngineDirectory = "$projectDir"
       dockerDirectory = "$projectDir"
-
     }
   deploy {   // deploy configuration
     stopPreviousVersion = true  // default - stop the current version
