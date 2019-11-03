@@ -7,7 +7,8 @@ script:
   - ./gradlew sonarqube
   - ./gradlew buildDockerImage
 
+
 deploy:
   provider: gae
   keyfile: serviceaccount.json
-  project: My Project 86483
+  project: enduring-honor-256422
