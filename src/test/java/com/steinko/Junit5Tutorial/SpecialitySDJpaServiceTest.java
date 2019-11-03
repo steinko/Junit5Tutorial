@@ -12,7 +12,15 @@ import java.lang.RuntimeException;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.any;
-import static org.mockito.BDDMockito.*;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.then;
+import static org.mockito.BDDMockito.doThrow;
+import static org.mockito.BDDMockito.willThrow;
+
+import static org.mockito.ArgumentMatchers.argThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+
 
 
 
@@ -76,6 +84,21 @@ public class SpecialitySDJpaServiceTest {
 		willThrow(new RuntimeException("boom")).given(repository).delete(any());
 		assertThrows(RuntimeException.class, ()-> repository.delete(new Speciality()));
 		then(repository).should().delete(any());
+	}
+	
+	@Test
+	void shouldSaveWithMatch() {
+		final String MATCH_ME = "MATCH_ME";
+		Speciality speciality = new Speciality();
+		speciality.setDescription(MATCH_ME);
+		
+		Speciality saveSpeciality = new Speciality();
+		saveSpeciality.setId(1L);
+		//given(repository.save(argThat(argument->argument.getDescription().equals(MATCH_ME)))).willReturn(saveSpeciality);
+		
+		Speciality returnSpeciality = service.save(speciality);
+		assertEquals(returnSpeciality.getId(),1L);
+		
 	}
 	
 	

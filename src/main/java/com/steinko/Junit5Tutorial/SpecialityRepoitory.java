@@ -15,5 +15,9 @@ public class SpecialityRepoitory {
 	public void delete(Speciality speciality) { 
 		
 	}
+	
+	public Speciality save(Speciality speciality) {
+		return null;
+	}
 
 }

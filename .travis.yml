@@ -8,7 +8,7 @@ script:
   - ./gradlew buildDockerImage
 
 
-deploy:
-  provider: gae
-  keyfile: serviceaccount.json
-  project: enduring-honor-256422
+//deploy:
+//  provider: gae
+//  keyfile: serviceaccount.json
+ // project: enduring-honor-256422

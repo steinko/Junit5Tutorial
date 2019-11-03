@@ -19,4 +19,11 @@ public class SpecialitySDJpaService {
 		return repository.findById(id);
 	}
 
+	public Speciality save(Speciality speciality) {
+		Speciality stub = new Speciality();
+		stub.setId(1L);
+		
+		return stub;
+	}
+
 }

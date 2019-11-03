@@ -44,10 +44,16 @@ sonarqube {
 }
 
 appengine {
+  stage {
+      appEngineDirectory = "$projectDir"
+      dockerDirectory = "$projectDir"
 
+    }
   deploy {   // deploy configuration
     stopPreviousVersion = true  // default - stop the current version
     promote = true              // default - & make this the current version
+    projectId = 'enduring-honor-256422'
+    version = '1'
   }
 
 }
