@@ -10,6 +10,9 @@ script:
   - ./gradlew sonarqube
   - ./gradlew buildDockerImage
 
+before-deploy: 
+  skip_cleanup: true 
+
 deploy:
   provider: gae	
   keyfile: serviceaccount.json	  
