@@ -33,16 +33,21 @@ public class VetSDJpaServiceTest {
 	
 	@Test
 	void shouldDeleteById() {
+		//when
 		service.deleteById(1L);
-		verify(repository).deleteById(1L);
+		//then
+		then(repository).should().deleteById(1L);
 		
 	}
 	
 	@Test
 	void shouldDelete() {
+		
 		Visit visit = new Visit();
+		//when
 		service.delete(visit);
-		verify(repository).delete(visit);
+		//then
+		then(repository).should().delete(visit);
 		
 	}
 	
@@ -55,17 +60,11 @@ public class VetSDJpaServiceTest {
 		
 		when(repository.findAll()).thenReturn(visits);
 		Set<Visit> found = service.findAll();
-		verify(repository).findAll();
+		then(repository).should().findAll();
 		assertEquals(visits,found);
 	}
 	
-	@Test
-	void shouldReturnAVist() { 
-		Visit visit = new Visit();
-		when(repository.findById(anyLong())).thenReturn(visit);
-		Visit found = service.findById(1L);
-		assertEquals(visit,found);
-	}
+	
 	
 	@Test
 	void shuldReturnAVisitBDD() { 
@@ -81,7 +80,7 @@ public class VetSDJpaServiceTest {
 	void shouldStoreAVisit() { 
 		Visit visit = new Visit();
 		service.save(visit);
-		verify(repository).save(visit);
+		then(repository).should().save(visit);
 		
 	}
 
