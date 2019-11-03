@@ -2,7 +2,15 @@ language: java
 jdk: openjdk12
 os: linux
 dist: trusty
+sudo: required
+services:
+  - docker
 script: 
   - ./gradlew check
   - ./gradlew sonarqube
   - ./gradlew buildDockerImage
+
+deploy:
+  provider: gae	  provider: gae
+  keyfile: serviceaccount.json	  
+  project: enduring-honor-256422 
