@@ -6,9 +6,3 @@ script:
   - ./gradlew check
   - ./gradlew sonarqube
   - ./gradlew buildDockerImage
-
-
-//deploy:
-//  provider: gae
-//  keyfile: serviceaccount.json
- // project: enduring-honor-256422
