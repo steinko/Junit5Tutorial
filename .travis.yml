@@ -8,4 +8,5 @@ services:
 script: 
   - ./gradlew check
   - ./gradlew sonarqube
+  - ./gradlew appengineCloudSdkLogin
   - ./gradlew appengineDeploy
