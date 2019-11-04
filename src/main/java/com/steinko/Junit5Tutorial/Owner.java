@@ -24,6 +24,7 @@ public class Owner extends Person{
 	public void setTelephone(int telephone) {
 		this.telephone = telephone;
 	}
+
 	
 
 }
