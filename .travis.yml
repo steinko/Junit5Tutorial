@@ -8,5 +8,6 @@ services:
 script: 
   - ./gradlew check
   - ./gradlew sonarqube
-  - ./gradlew appengineCloudSdkLogin
+  - ./gradlew downloadCloudSdk
+  - gcloud auth activate-service-account  --key-file=serviceaccount.jsom
   - ./gradlew appengineDeploy
