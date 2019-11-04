@@ -12,7 +12,7 @@ public class OwnerController {
 	
 	public String prosessFindForm(Owner owner, BindingResult result, Model model) {
 		
-		List<Owner> results = service.findAllByLastNameLike(" ");
+		List<Owner> results = service.findAllByLastNameLike("%" + owner.getFamilyName() +  "%");
 		
 		if (results.isEmpty()) {
             

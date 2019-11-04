@@ -10,4 +10,6 @@ script:
   - ./gradlew sonarqube
   - ./gradlew downloadCloudSdk
   - gcloud auth activate-service-account  --key-file=serviceaccount.json
+  - gcloud app versions start --service default 1
   - ./gradlew appengineDeploy
+  - gcloud app versions stop --service default 1

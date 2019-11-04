@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.mockito.Mock;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -37,7 +38,7 @@ public class OwnerControllerTest {
 
 	@BeforeEach
 	void setUp() { 
-		owner = new Owner(0L, null, null);
+		owner = new Owner(0L, null, "Korsveien");
 		owners = new ArrayList<Owner>();
 	    model = new Model();
 	}
@@ -60,6 +61,15 @@ public class OwnerControllerTest {
 	void shouldReturnRedirectOwners5() { 
 		String viewForm = controller.processCreateForm(owner,result);
 		assertEquals(viewForm,"redirect:/owners/5");
+	}
+	
+	@Test
+	void shouldEnterAWildCard() { 
+		final ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+		given(service.findAllByLastNameLike(captor.capture())).willReturn(owners);
+		
+		String viewName = controller.prosessFindForm(owner, result, model);
+		assertEquals("%Korsveien%", captor.getValue());
 	}
 	
 	@Test
