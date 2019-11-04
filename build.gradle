@@ -17,7 +17,7 @@ plugins {
     
     
 }
-apply plugin: 'com.google.cloud.tools.appengine'
+apply plugin: 'com.google.cloud.tools.appengine-appyaml'
 
 repositories {
     mavenCentral()
@@ -45,10 +45,13 @@ sonarqube {
 
 appengine {
   stage {
-      appEngineDirectory = "$projectDir"
-      dockerDirectory = "$projectDir"
+      appEngineDirectory  'config'
+      dockerDirectory 'config'
+      artifact  'build/libs/Junit5Tutorial.jar'
+      
     }
-  deploy {   // deploy configuration
+  deploy {   
+    appEngineDirectory = './'
     stopPreviousVersion = true  // default - stop the current version
     promote = true              // default - & make this the current version
     projectId = 'enduring-honor-256422'

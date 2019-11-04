@@ -8,12 +8,4 @@ services:
 script: 
   - ./gradlew check
   - ./gradlew sonarqube
-  - ./gradlew buildDockerImage
-
-before-deploy: 
-  skip_cleanup: true 
-
-deploy:
-  provider: gae	
-  keyfile: serviceaccount.json	  
-  project: enduring-honor-256422 
+  - ./gradlew appengineDeploy
