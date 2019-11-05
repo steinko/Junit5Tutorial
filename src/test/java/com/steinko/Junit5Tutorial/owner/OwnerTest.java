@@ -1,4 +1,4 @@
-package com.steinko.Junit5Tutorial;
+package com.steinko.Junit5Tutorial.owner;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -56,7 +56,7 @@ appengine {
     appEngineDirectory = './'
     stopPreviousVersion = true  // default - stop the current version
     promote = true              // default - & make this the current version
-    projectId = 'enduring-honor-256422'
+    projectId = 'springBoot14'
     version = '1'
   }
 

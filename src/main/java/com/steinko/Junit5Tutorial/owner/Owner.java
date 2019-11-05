@@ -1,4 +1,6 @@
-package com.steinko.Junit5Tutorial;
+package com.steinko.Junit5Tutorial.owner;
+
+import com.steinko.Junit5Tutorial.Person;
 
 public class Owner extends Person{
 	  private String city;

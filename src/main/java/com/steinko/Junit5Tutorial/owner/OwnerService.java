@@ -1,4 +1,4 @@
-package com.steinko.Junit5Tutorial;
+package com.steinko.Junit5Tutorial.owner;
 
 
 import java.util.List;

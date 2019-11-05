@@ -1,6 +1,8 @@
-package com.steinko.Junit5Tutorial;
+package com.steinko.Junit5Tutorial.owner;
 
 import java.util.List;
+import com.steinko.Junit5Tutorial.BindingResult;
+import com.steinko.Junit5Tutorial.Model;
 
 public class OwnerController {
 	private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
@@ -19,9 +21,10 @@ public class OwnerController {
             return "owners/findOwners";
         } else if (results.size() == 1) {
             
-            return "redirect:/owners/" + "5";
+            return "redirect:/owners/" + owner.id();
+        } else {
+        	return "owners/ownersList";
         }
-		return null;
 		
 	}
 
