@@ -56,7 +56,7 @@ appengine {
     appEngineDirectory = './'
     stopPreviousVersion = true  // default - stop the current version
     promote = true              // default - & make this the current version
-    projectId = 'springBoot14'
+    projectId = 'springboot14'
     version = '1'
   }
 
